@@ -40,6 +40,14 @@ docker run -it --privileged \
     --name sagittarius_arm_container sagittarius_arm
 ```
 
+To enter into the container once it's created.
+The exec command can also be used to enter into a docker via multiple terminals.
+```bash
+docker start sagittarius_arm_container
+docker exec -it sagittarius_arm_container bash
+```
+
+
 ### 3. Enable GUI Support (Optional)
 
 If using GUI applications, allow Docker to access your X server:
