@@ -46,7 +46,14 @@ The exec command can also be used to enter into a docker via multiple terminals.
 docker start sagittarius_arm_container
 docker exec -it sagittarius_arm_container bash
 ```
-
+To build the librealsense package (Needed for CV applications with the robot arm)
+```bash
+cd /librealsense && \
+    mkdir build && cd build && \
+    cmake .. && \
+    make -j$(nproc) && make install && \
+    apt update && apt upgrade	
+```
 
 ### 3. Enable GUI Support (Optional)
 
