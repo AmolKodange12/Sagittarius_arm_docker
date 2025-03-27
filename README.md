@@ -15,7 +15,7 @@ Ensure you have Docker installed on your system. If not, follow the official [Do
 Clone this repository and navigate into the directory:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Sagittarius_arm_docker.git
+git clone https://github.com/AmolKodange12/Sagittarius_arm_docker.git
 cd Sagittarius_arm_docker
 ```
 
@@ -35,7 +35,7 @@ docker run -it --privileged \
     --env="DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    --device=/dev/ttyACM0 \
+    --device=/dev:/dev \
     --volume="/home/$USER/Sagittarius_arm_docker:/root/sagittarius_docker" \
     --name sagittarius_arm_container sagittarius_arm
 ```
@@ -72,7 +72,7 @@ ln -s /dev/ttyACM0 /dev/sagittarius
 
 ### 5. Source ROS Setup
 
-Follow the setup instructions from the [sagittarius_ws repository](https://github.com/NXROBO/sagittarius_ws) and add the sourcing commands to your `~/.bashrc` file:
+Run `sudo apt update` and follow the setup instructions from the [sagittarius_ws repository](https://github.com/NXROBO/sagittarius_ws) and add the sourcing commands to your `~/.bashrc` file:
 
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
